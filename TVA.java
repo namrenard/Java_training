@@ -28,26 +28,6 @@ public class TVA{
 			break;
 		}
 		
-		/*
-		if (t == 0) {
-				pTTC = pHT + (pHT*0.196);
-		}
-		else if (t == 1) {
-			pTTC = pHT + (pHT*0.05);
-		}
-		else {
-			try { 
-				t < 0; 
-				t > 1;
-			}
-			catch {
-				Exception e
-			}
-			finally {
-				System.err.println("Erreur, vous n'avez pas sélectionné un taux de TVA.");
-				saisie.close();}	
-		}
-		*/
 		saisie.close();
 	}
 
