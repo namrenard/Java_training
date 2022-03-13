@@ -1,0 +1,2 @@
+module application_bancaire {
+}
