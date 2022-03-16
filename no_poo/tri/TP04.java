@@ -16,9 +16,8 @@ public class TP04{
 						A[i-1] = A[i];
 						A[i] = temporaire;
 						permut = true;
-					}	
+					}
 				}
-				indiceMax -= 1;
 			}
 			while (permut = true);
 				System.out.println("Tableau apr\u00e8s tri :" +Arrays.toString(A));
@@ -74,17 +73,17 @@ public class TP04{
 					A[j]=valins;
 				}
 			}
-			System.out.println("Les \u00e9l\u00e9ments sont dans cet ordre apr\u00e8s le tri : ");
+			System.out.println("Les \u00e6l\u00e6ments sont dans cet ordre apr\u00e8s le tri : ");
 			System.out.println("Tableau ["+Arrays.toString(A)+"] ");
 		}
 	public static void triSort(int[] A){
 			
-			System.out.println("Les \u00e9l\u00e9ments sont dans cet ordre avant le tri : ");
+			System.out.println("Les \u00e6l\u00e6ments sont dans cet ordre avant le tri : ");
 			for (int i = 0; i< A.length; i++){
 				System.out.println("Tableau [" +i+ "]= " +A[i]);
 			}
 			Arrays.sort(A);
-			System.out.println("Les \u00e9l\u00e9ments sont dans cet ordre apr\u00e8s le tri : ");
+			System.out.println("Les \u00e6l\u00e6ments sont dans cet ordre apr\u00e8s le tri : ");
 			for (int i = 0; i< A.length; i++){
 				System.out.println("Tableau [" +i+ "]= " +A[i]);
 			}
@@ -110,7 +109,7 @@ public class TP04{
 		int taille_tableau = console.nextInt();
 		int[] A = new int [taille_tableau];
 		//declaration des int du tableau
-		System.out.println("Veuillez entrer une suite d'entier naturel d\u00e9sordonn\u00e9. Une valeur puis 'entrer' \u00e0 chaque fois.");
+		System.out.println("Veuillez entrer une suite d'entier naturel d\u00e6sordonn\u00e6. Une valeur puis 'entrer' \u00e0 chaque fois.");
 		for (int i=0; i<taille_tableau;i++){
 			A[i] = console.nextInt();
 		}
@@ -142,7 +141,7 @@ public class TP04{
 				triStream(A);
 			break;
 			default : 
-				System.err.println("Erreur, vous n'avez pas choisi une m\u00e9thode de tri valide. Programme abord\u00e9");
+				System.err.println("Erreur, vous n'avez pas choisi une m\u00e6thode de tri valide. Programme abord\u00e6");
 				console.close();			
 		}
 	
