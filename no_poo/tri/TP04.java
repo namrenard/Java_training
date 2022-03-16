@@ -2,27 +2,28 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class TP04{
-			
-	public static void triBulle(int[] A){
+
+		public static void triBulle(int[] A){
 
 			boolean permut;
 			int taille = A.length;
 			int indiceMax = taille-1;
 			do {
 				permut = false;
-				for (int i=1 ; i < indiceMax; i++){
-					if (A[i-1] > A[i]){
-						int temporaire = A[i-1];
-						A[i-1] = A[i];
-						A[i] = temporaire;
+				for (int i=0 ; i < indiceMax; i++){
+					if (A[i] > A[i+1]){
+						int temporaire = A[i];
+						A[i] = A[i+1];
+						A[i+1] = temporaire;
 						permut = true;
 					}
 				}
+			indiceMax--;	
 			}
-			while (permut = true);
+			while (permut);
 				System.out.println("Tableau apr\u00e8s tri :" +Arrays.toString(A));
 			}
-	public static void triSelection(int[] A){	
+		public static void triSelection(int[] A){	
 			
 			for (int i=0; i<A.length;i++){
 				int iMin = i;
@@ -37,7 +38,7 @@ public class TP04{
 			}
 			System.out.println("Tableau apr\u00e8s tri :" +Arrays.toString(A));
 		}
-	public static void triInsertion(int[] A){
+		public static void triInsertion(int[] A){
 			
 			int taille = A.length;
 			for (int i= 1; i< taille; i++){
@@ -51,7 +52,7 @@ public class TP04{
 			}
 			System.out.println("Tableau apr\u00e8s tri :" +Arrays.toString(A));
 		}
-	public static void triShell(int[] A){
+		public static void triShell(int[] A){
 			
 			int taille = A.length;
 			int pas=0;
@@ -60,13 +61,13 @@ public class TP04{
 				pas=3*pas+1;
 				}
 			
-			while(pas > 1){
+			while(pas != 0){
 				pas=pas/3;
 				for (int i=pas;i<taille;i++){
 					int valins=A[i];
 					int j=i;
 
-					while(j> pas && (A[j-pas]>valins)){
+					while(j> pas-1 && (A[j-pas]>valins)){
 						A[j]=A[j-i];
 						j=j-pas;
 					}
@@ -76,7 +77,7 @@ public class TP04{
 			System.out.println("Les \u00e6l\u00e6ments sont dans cet ordre apr\u00e8s le tri : ");
 			System.out.println("Tableau ["+Arrays.toString(A)+"] ");
 		}
-	public static void triSort(int[] A){
+		public static void triSort(int[] A){
 			
 			System.out.println("Les \u00e6l\u00e6ments sont dans cet ordre avant le tri : ");
 			for (int i = 0; i< A.length; i++){
@@ -88,21 +89,21 @@ public class TP04{
 				System.out.println("Tableau [" +i+ "]= " +A[i]);
 			}
 		}
-	public static void triStream(int[] A){
+		public static void triStream(int[] A){
 			Arrays.stream(A).forEach(System.out::println);
 		}
 		
-	public static void main (String[] args){
-	/* scanner pour demander quel tri 
-	* si 1,2,3,4 en fonction des tri.
-	*1 = tri bulle
-	*2 = tri selection
-	*3 = tri insertion
-	*4 = tri shell
-	*5 = Methode récente ( arrays.sort(tab); + boucle for)
-	*6 = Methode Stream(arrays.stream(montableau).foreach(System.out::println);)
-	*ensuite sort le résultat du tri dans le tableau dans chaque tri + explication de procédure.
-	*/
+		public static void main (String[] args){
+		/* scanner pour demander quel tri 
+		* si 1,2,3,4 en fonction des tri.
+		*1 = tri bulle
+		*2 = tri selection
+		*3 = tri insertion
+		*4 = tri shell
+		*5 = Methode récente ( arrays.sort(tab); + boucle for)
+		*6 = Methode Stream(arrays.stream(montableau).foreach(System.out::println);)
+		*ensuite sort le résultat du tri dans le tableau dans chaque tri + explication de procédure.
+		*/
 		Scanner console = new Scanner(System.in);
 		//declaration taille tableau
 		System.out.println("Bonjour, veuillez donner une taille au tableau.");
@@ -144,7 +145,6 @@ public class TP04{
 				System.err.println("Erreur, vous n'avez pas choisi une m\u00e6thode de tri valide. Programme abord\u00e6");
 				console.close();			
 		}
-	
-	}
-	
+
+	}	
 }
