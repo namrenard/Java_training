@@ -3,7 +3,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-
 public class Exo5 {
 
 	public static void main(String[] args) {
@@ -14,21 +13,19 @@ public class Exo5 {
 		int choix = console.nextInt();
 	
 		for (int i=0; i< choix ; i++){
-			double nb = Math.random(); //genere le chiffre aleatoirement
+			double nb = 10*Math.random(); //genere le chiffre aleatoirement
 			int nb2 = (int)Math.round(nb);
-			int x = 10*nb;
-			fileAttente.add(x);
+			fileAttente.add(nb2);
 			
-			System.out.println("Composition de la file d'attente : " + fileAttente);
-						if (nb %2 == 0){
-			System.out.println("Une personne entre dans la file : " + fileAttente.peek(x) );
-			
+			if (nb2 %2 == 0){
+				System.out.println("Une personne entre dans la file : " + fileAttente.peek() + " .");
 			}
 			else {
 				System.out.println("Un personne sort de la file");
-				fileAttente.remove(x);
-				System.out.println("Elle portait le numero d'attente "+ x +" .");		
+				fileAttente.remove(nb2);
+				System.out.println("Elle portait le numero d'attente "+ nb2 +" .");		
 			}
+		System.out.println("Composition de la file d'attente : " + fileAttente);
 		console.close();	
 		}
 		
